@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food table</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <input type="text" id="name" placeholder="Enter name" />
+      <input type="number" id="price" placeholder="Enter price" />
+      <input type="number" id="count" placeholder="Enter count" />
+
+      <button id="btn">Save</button>
+    </form>
+
+    <table id="table">
+      <thead>
+        <tr>
+          <th>NO</th>
+          <th>Nomi</th>
+          <th>Narxi</th>
+          <th>Soni</th>
+          <th>Amallar</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2"><b>Jami:</b></td>
+          <td id="overalPrice">300</td>
+          <td id="overalCount">20</td>
+        </tr>
+      </tfoot>
+    </table>
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
