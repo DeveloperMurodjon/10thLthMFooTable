@@ -105,3 +105,84 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// 1-MASHQ
+
+document.addEventListener("DOMContentLoaded", function () {
+  const generateBtn = document.getElementById("generateBtn");
+  const emojiDisplay = document.getElementById("emojiDisplay");
+
+  const emojis = [
+    "😀",
+    "🎅",
+    "🎉",
+    "🚀",
+    "🐱",
+    "🍎",
+    "😍",
+    "💻",
+    "🌟",
+    "⚡",
+    "🎵",
+  ];
+
+  function generateEmoji() {
+    const randomIndex = Math.floor(Math.random() * emojis.length);
+    const randomEmoji = emojis[randomIndex];
+    emojiDisplay.textContent = randomEmoji;
+  }
+  generateBtn.addEventListener("click", generateEmoji);
+});
+
+//2-MASHQ
+const textArea = document.getElementById("textArea");
+const boldBtn = document.getElementById("boldBtn");
+const italicBtn = document.getElementById("italicBtn");
+const clearBtn = document.getElementById("clearBtn");
+
+boldBtn.addEventListener("click", function () {
+  if (textArea.style.fontWeight === "bold") {
+    textArea.style.fontWeight = "normal";
+  } else {
+    textArea.style.fontWeight = "bold";
+  }
+});
+
+italicBtn.addEventListener("click", function () {
+  if (textArea.style.fontStyle === "italic") {
+    textArea.style.fontStyle = "normal";
+  } else {
+    textArea.style.fontStyle = "italic";
+  }
+});
+
+clearBtn.addEventListener("click", function () {
+  textArea.value = "";
+});
+
+// 3-MASHQ
+const startBarBtn = document.getElementById("startBarBtn");
+const progressBar = document.getElementById("progressBar");
+const statusText = document.getElementById("statusText");
+
+let progress = 0;
+let interval;
+
+startBarBtn.addEventListener("click", function () {
+  startBarBtn.disabled = true;
+  interval = setInterval(function () {
+    progress += 5;
+    progressBar.style.width = progress + "%";
+    if (progress <= 50) {
+      progressBar.style.backgroundColor = "red";
+    } else if (progress <= 80) {
+      progressBar.style.backgroundColor = "yellow";
+    } else {
+      progressBar.style.backgroundColor = "green";
+    }
+    if (progress >= 100) {
+      clearInterval(interval);
+      statusText.textContent = "Tugadi!";
+    }
+  }, 500);
+});
